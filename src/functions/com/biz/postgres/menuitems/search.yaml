@@ -1,0 +1,12 @@
+summary: Fetch many MenuItems
+tasks:
+  - id: postgres_menuitems_search
+    fn: com.gs.datastore
+    args:
+      datasource: postgres
+      data: 
+        where :
+          couponCode :
+            hasSome : <% inputs.body.couponCode %>
+      config:
+        method: MenuItems.findMany
